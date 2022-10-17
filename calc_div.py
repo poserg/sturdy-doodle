@@ -4,26 +4,26 @@
 import requests
 from bs4 import BeautifulSoup
 
-def parse_dividends(file_name):
-	with open('/tmp/div.txt', 'r') as f:
-		lines = [line.rstrip() for line in f]
-
+def parse_dividends(lines):
 	r = {}
-	for i in xrange(2006, 2022):
+	for i in range(2006, 2022):
 		r[i] = 0
 
 	for l in lines:
-		record = l.split()
-		key=int(record[1][-4:])
+		# print(l)
+		if len(l) < 4 or len(l[1]) != 10:
+			continue
+		key=int(l[1][-4:])
 		if key in r:
-			value=float(record[3])
+			value=float(l[3])
 			# print(value)
 			r[key]=r[key]+value
-	s=''
-	for i in sorted(r.keys()):
-	    s=s + str(r[i]) + '\t'
 
-	print (s)
+	result = []
+	for i in sorted(r.keys()):
+	    result.append(r[i])
+
+	return result
 
 def load_dividends(url):
 	response = requests.get(url)
@@ -42,4 +42,5 @@ def load_dividends(url):
 
 if __name__ == "__main__":
 	table = load_dividends('https://www.dohod.ru/ik/analytics/dividend/agro')
-	print(table)
+	divs = parse_dividends(table)
+	print(divs)
