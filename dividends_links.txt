@@ -1,120 +1,120 @@
-https://www.dohod.ru/ik/analytics/dividend/afks АФК Система
-https://www.dohod.ru/ik/analytics/dividend/aflt Аэрофлот
-https://www.dohod.ru/ik/analytics/dividend/agro Русагро
-https://www.dohod.ru/ik/analytics/dividend/akrn Акрон
-https://www.dohod.ru/ik/analytics/dividend/alrs Алроса
-https://www.dohod.ru/ik/analytics/dividend/aqua Русская Аквакультура
-https://www.dohod.ru/ik/analytics/dividend/banep    Башнефть-п
-https://www.dohod.ru/ik/analytics/dividend/bane Башнефть-ао
-https://www.dohod.ru/ik/analytics/dividend/belu Белуга Групп
-https://www.dohod.ru/ik/analytics/dividend/bisvp    Башинформсвязь-ап
-https://www.dohod.ru/ik/analytics/dividend/bspbp    Банк Санкт-Петербург-ап
-https://www.dohod.ru/ik/analytics/dividend/bspb Банк Санкт-Петербург (БСП)
-https://www.dohod.ru/ik/analytics/dividend/cbom МКБ
-https://www.dohod.ru/ik/analytics/dividend/chep ЧТПЗ
-https://www.dohod.ru/ik/analytics/dividend/chmf Северсталь
-https://www.dohod.ru/ik/analytics/dividend/cntlp    Центральный телеграф-п
-https://www.dohod.ru/ik/analytics/dividend/cntl Центральный телеграф-ао
-https://www.dohod.ru/ik/analytics/dividend/dsky Детский мир
-https://www.dohod.ru/ik/analytics/dividend/enpg En Plus
-https://www.dohod.ru/ik/analytics/dividend/enru Энел Россия
-https://www.dohod.ru/ik/analytics/dividend/etlndr   Эталон
-https://www.dohod.ru/ik/analytics/dividend/fees ФСК ЕЭС
-https://www.dohod.ru/ik/analytics/dividend/fivedr   X5 Retail Group
-https://www.dohod.ru/ik/analytics/dividend/fixp Fix Price
-https://www.dohod.ru/ik/analytics/dividend/flot Совкомфлот
-https://www.dohod.ru/ik/analytics/dividend/gazp Газпром
-https://www.dohod.ru/ik/analytics/dividend/gche Черкизово
-https://www.dohod.ru/ik/analytics/dividend/gemcdr   United Medical Group (ЕМС)
-https://www.dohod.ru/ik/analytics/dividend/gltr Globaltrans
-https://www.dohod.ru/ik/analytics/dividend/gmkn Норильский никель
-https://www.dohod.ru/ik/analytics/dividend/hhru HeadHunter
-https://www.dohod.ru/ik/analytics/dividend/himcp    Химпром-п
-https://www.dohod.ru/ik/analytics/dividend/hmsgdr   HMS Group
-https://www.dohod.ru/ik/analytics/dividend/hydr Русгидро
-https://www.dohod.ru/ik/analytics/dividend/irao Интер РАО ЕЭС
-https://www.dohod.ru/ik/analytics/dividend/irgz Иркутскэнерго
-https://www.dohod.ru/ik/analytics/dividend/kaztp    Куйбышевазот-п
-https://www.dohod.ru/ik/analytics/dividend/kazt Куйбышевазот
-https://www.dohod.ru/ik/analytics/dividend/kmaz Камаз
-https://www.dohod.ru/ik/analytics/dividend/krknp    Саратовский НПЗ-ап
-https://www.dohod.ru/ik/analytics/dividend/krsb Красноярскэнергосбыт-ао
-https://www.dohod.ru/ik/analytics/dividend/kuzb Банк Кузнецкий
-https://www.dohod.ru/ik/analytics/dividend/kzosp    КазаньОргсинтез-п
-https://www.dohod.ru/ik/analytics/dividend/kzosp    КазаньОргСинтез-п
-https://www.dohod.ru/ik/analytics/dividend/kzos КазаньОргсинтез-ао
-https://www.dohod.ru/ik/analytics/dividend/kzos КазаньОргСинтез-ао
-https://www.dohod.ru/ik/analytics/dividend/lkoh ЛУКОЙЛ
-https://www.dohod.ru/ik/analytics/dividend/lnta Лента
-https://www.dohod.ru/ik/analytics/dividend/lnzlp    Лензолото-п
-https://www.dohod.ru/ik/analytics/dividend/lnzl Лензолото-ао
-https://www.dohod.ru/ik/analytics/dividend/lsngp    Ленэнерго-п (Россети Ленэнерго)
-https://www.dohod.ru/ik/analytics/dividend/lsng Ленэнерго-ао (Россети Ленэнерго)
-https://www.dohod.ru/ik/analytics/dividend/lsrg ЛСР
-https://www.dohod.ru/ik/analytics/dividend/lvhk Левенгук
-https://www.dohod.ru/ik/analytics/dividend/magn ММК
-https://www.dohod.ru/ik/analytics/dividend/mdmg Мать и дитя
-https://www.dohod.ru/ik/analytics/dividend/mgnt Магнит
-https://www.dohod.ru/ik/analytics/dividend/mgtsp    МГТС-п
-https://www.dohod.ru/ik/analytics/dividend/mgts МГТС
-https://www.dohod.ru/ik/analytics/dividend/moex Московская биржа
-https://www.dohod.ru/ik/analytics/dividend/mrkc МРСК Центра (Россети Центр)
-https://www.dohod.ru/ik/analytics/dividend/mrkk МРСК СК (Россети СК)
-https://www.dohod.ru/ik/analytics/dividend/mrkp МРСК Центра и Приволжья (Россети ЦП)
-https://www.dohod.ru/ik/analytics/dividend/mrks МРСК Сибири (Россети Сибирь)
-https://www.dohod.ru/ik/analytics/dividend/mrku МРСК Урала (Россети Урал)
-https://www.dohod.ru/ik/analytics/dividend/mrkv МРСК Волги (Россети Волга)
-https://www.dohod.ru/ik/analytics/dividend/mrky МРСК Юга (Россети Юг)
-https://www.dohod.ru/ik/analytics/dividend/mrkz МРСК СЗ (Россети СЗ)
-https://www.dohod.ru/ik/analytics/dividend/msng Мосэнерго
-https://www.dohod.ru/ik/analytics/dividend/msrs МОЭСК (Россети Московский регион)
-https://www.dohod.ru/ik/analytics/dividend/mstt Мостотрест
-https://www.dohod.ru/ik/analytics/dividend/mtlrp    Мечел-ап
-https://www.dohod.ru/ik/analytics/dividend/mtlr Мечел-ао
-https://www.dohod.ru/ik/analytics/dividend/mtss МТС
-https://www.dohod.ru/ik/analytics/dividend/mvid М.Видео
-https://www.dohod.ru/ik/analytics/dividend/nkhp НКХП
-https://www.dohod.ru/ik/analytics/dividend/nkncp    НКНХ-п
-https://www.dohod.ru/ik/analytics/dividend/nknc НКНХ-ао
-https://www.dohod.ru/ik/analytics/dividend/nlmk НЛМК
-https://www.dohod.ru/ik/analytics/dividend/nmtp НМТП
-https://www.dohod.ru/ik/analytics/dividend/nvtk НОВАТЭК
-https://www.dohod.ru/ik/analytics/dividend/obuv Обувь России
-https://www.dohod.ru/ik/analytics/dividend/ogkb ОГК-2
-https://www.dohod.ru/ik/analytics/dividend/okey ОКЕЙ
-https://www.dohod.ru/ik/analytics/dividend/phor Фосагро
-https://www.dohod.ru/ik/analytics/dividend/pikk ПИК
-https://www.dohod.ru/ik/analytics/dividend/plzl Полюс
-https://www.dohod.ru/ik/analytics/dividend/poly Полиметалл
-https://www.dohod.ru/ik/analytics/dividend/posi Группа Позитив
-https://www.dohod.ru/ik/analytics/dividend/qiwi QIWI
-https://www.dohod.ru/ik/analytics/dividend/rasp Распадская
-https://www.dohod.ru/ik/analytics/dividend/rnft Русснефть-ао
-https://www.dohod.ru/ik/analytics/dividend/rosn Роснефть
-https://www.dohod.ru/ik/analytics/dividend/rstip    Россети-п
-https://www.dohod.ru/ik/analytics/dividend/rsti Россети-ао
-https://www.dohod.ru/ik/analytics/dividend/rtkmp    Ростелеком-п
-https://www.dohod.ru/ik/analytics/dividend/rtkm Ростелеком-ао
-https://www.dohod.ru/ik/analytics/dividend/rual Русал
-https://www.dohod.ru/ik/analytics/dividend/sberp    Сбербанк-п
-https://www.dohod.ru/ik/analytics/dividend/sber Сбербанк-ао
-https://www.dohod.ru/ik/analytics/dividend/selgp    Селигдар-п
-https://www.dohod.ru/ik/analytics/dividend/selg Селигдар ао
-https://www.dohod.ru/ik/analytics/dividend/sfin Сафмар
-https://www.dohod.ru/ik/analytics/dividend/sgzh Сегежа
-https://www.dohod.ru/ik/analytics/dividend/sibn Газпром нефть
-https://www.dohod.ru/ik/analytics/dividend/smlt ГК Самолет
-https://www.dohod.ru/ik/analytics/dividend/sngsp    Сургутнефтегаз-п
-https://www.dohod.ru/ik/analytics/dividend/sngs Сургутнефтегаз-ао
-https://www.dohod.ru/ik/analytics/dividend/svav Соллерс
-https://www.dohod.ru/ik/analytics/dividend/tatnp    Татнефть-п
-https://www.dohod.ru/ik/analytics/dividend/tatn Татнефть-ао
-https://www.dohod.ru/ik/analytics/dividend/tcsgr    TCS Group
-https://www.dohod.ru/ik/analytics/dividend/tgka ТГК-1
-https://www.dohod.ru/ik/analytics/dividend/trmk ТМК
-https://www.dohod.ru/ik/analytics/dividend/trnfp    Транснефть-п
-https://www.dohod.ru/ik/analytics/dividend/ttlk Таттелеком
-https://www.dohod.ru/ik/analytics/dividend/upro Юнипро
-https://www.dohod.ru/ik/analytics/dividend/vsmo ВСМПО-АВИСМА
-https://www.dohod.ru/ik/analytics/dividend/vtbr ВТБ
-https://www.dohod.ru/ik/analytics/dividend/yndx Яндекс
+https://www.dohod.ru/ik/analytics/dividend/afks;АФК Система
+https://www.dohod.ru/ik/analytics/dividend/aflt;Аэрофлот
+https://www.dohod.ru/ik/analytics/dividend/agro;Русагро
+https://www.dohod.ru/ik/analytics/dividend/akrn;Акрон
+https://www.dohod.ru/ik/analytics/dividend/alrs;Алроса
+https://www.dohod.ru/ik/analytics/dividend/aqua;Русская Аквакультура
+https://www.dohod.ru/ik/analytics/dividend/banep;Башнефть-п
+https://www.dohod.ru/ik/analytics/dividend/bane;Башнефть-ао
+https://www.dohod.ru/ik/analytics/dividend/belu;Белуга Групп
+https://www.dohod.ru/ik/analytics/dividend/bisvp;Башинформсвязь-ап
+https://www.dohod.ru/ik/analytics/dividend/bspbp;Банк Санкт-Петербург-ап
+https://www.dohod.ru/ik/analytics/dividend/bspb;Банк Санкт-Петербург (БСП)
+https://www.dohod.ru/ik/analytics/dividend/cbom;МКБ
+https://www.dohod.ru/ik/analytics/dividend/chep;ЧТПЗ
+https://www.dohod.ru/ik/analytics/dividend/chmf;Северсталь
+https://www.dohod.ru/ik/analytics/dividend/cntlp;Центральный телеграф-п
+https://www.dohod.ru/ik/analytics/dividend/cntl;Центральный телеграф-ао
+https://www.dohod.ru/ik/analytics/dividend/dsky;Детский мир
+https://www.dohod.ru/ik/analytics/dividend/enpg;En Plus
+https://www.dohod.ru/ik/analytics/dividend/enru;Энел Россия
+https://www.dohod.ru/ik/analytics/dividend/etlndr;Эталон
+https://www.dohod.ru/ik/analytics/dividend/fees;ФСК ЕЭС
+https://www.dohod.ru/ik/analytics/dividend/fivedr;X5 Retail Group
+https://www.dohod.ru/ik/analytics/dividend/fixp;Fix Price
+https://www.dohod.ru/ik/analytics/dividend/flot;Совкомфлот
+https://www.dohod.ru/ik/analytics/dividend/gazp;Газпром
+https://www.dohod.ru/ik/analytics/dividend/gche;Черкизово
+https://www.dohod.ru/ik/analytics/dividend/gemcdr;United Medical Group (ЕМС)
+https://www.dohod.ru/ik/analytics/dividend/gltr;Globaltrans
+https://www.dohod.ru/ik/analytics/dividend/gmkn;Норильский никель
+https://www.dohod.ru/ik/analytics/dividend/hhru;HeadHunter
+https://www.dohod.ru/ik/analytics/dividend/himcp;Химпром-п
+https://www.dohod.ru/ik/analytics/dividend/hmsgdr;HMS Group
+https://www.dohod.ru/ik/analytics/dividend/hydr;Русгидро
+https://www.dohod.ru/ik/analytics/dividend/irao;Интер РАО ЕЭС
+https://www.dohod.ru/ik/analytics/dividend/irgz;Иркутскэнерго
+https://www.dohod.ru/ik/analytics/dividend/kaztp;Куйбышевазот-п
+https://www.dohod.ru/ik/analytics/dividend/kazt;Куйбышевазот
+https://www.dohod.ru/ik/analytics/dividend/kmaz;Камаз
+https://www.dohod.ru/ik/analytics/dividend/krknp;Саратовский НПЗ-ап
+https://www.dohod.ru/ik/analytics/dividend/krsb;Красноярскэнергосбыт-ао
+https://www.dohod.ru/ik/analytics/dividend/kuzb;Банк Кузнецкий
+https://www.dohod.ru/ik/analytics/dividend/kzosp;КазаньОргсинтез-п
+https://www.dohod.ru/ik/analytics/dividend/kzosp;КазаньОргСинтез-п
+https://www.dohod.ru/ik/analytics/dividend/kzos;КазаньОргсинтез-ао
+https://www.dohod.ru/ik/analytics/dividend/kzos;КазаньОргСинтез-ао
+https://www.dohod.ru/ik/analytics/dividend/lkoh;ЛУКОЙЛ
+https://www.dohod.ru/ik/analytics/dividend/lnta;Лента
+https://www.dohod.ru/ik/analytics/dividend/lnzlp;Лензолото-п
+https://www.dohod.ru/ik/analytics/dividend/lnzl;Лензолото-ао
+https://www.dohod.ru/ik/analytics/dividend/lsngp;Ленэнерго-п (Россети Ленэнерго)
+https://www.dohod.ru/ik/analytics/dividend/lsng;Ленэнерго-ао (Россети Ленэнерго)
+https://www.dohod.ru/ik/analytics/dividend/lsrg;ЛСР
+https://www.dohod.ru/ik/analytics/dividend/lvhk;Левенгук
+https://www.dohod.ru/ik/analytics/dividend/magn;ММК
+https://www.dohod.ru/ik/analytics/dividend/mdmg;Мать и дитя
+https://www.dohod.ru/ik/analytics/dividend/mgnt;Магнит
+https://www.dohod.ru/ik/analytics/dividend/mgtsp;МГТС-п
+https://www.dohod.ru/ik/analytics/dividend/mgts;МГТС
+https://www.dohod.ru/ik/analytics/dividend/moex;Московская биржа
+https://www.dohod.ru/ik/analytics/dividend/mrkc;МРСК Центра (Россети Центр)
+https://www.dohod.ru/ik/analytics/dividend/mrkk;МРСК СК (Россети СК)
+https://www.dohod.ru/ik/analytics/dividend/mrkp;МРСК Центра и Приволжья (Россети ЦП)
+https://www.dohod.ru/ik/analytics/dividend/mrks;МРСК Сибири (Россети Сибирь)
+https://www.dohod.ru/ik/analytics/dividend/mrku;МРСК Урала (Россети Урал)
+https://www.dohod.ru/ik/analytics/dividend/mrkv;МРСК Волги (Россети Волга)
+https://www.dohod.ru/ik/analytics/dividend/mrky;МРСК Юга (Россети Юг)
+https://www.dohod.ru/ik/analytics/dividend/mrkz;МРСК СЗ (Россети СЗ)
+https://www.dohod.ru/ik/analytics/dividend/msng;Мосэнерго
+https://www.dohod.ru/ik/analytics/dividend/msrs;МОЭСК (Россети Московский регион)
+https://www.dohod.ru/ik/analytics/dividend/mstt;Мостотрест
+https://www.dohod.ru/ik/analytics/dividend/mtlrp;Мечел-ап
+https://www.dohod.ru/ik/analytics/dividend/mtlr;Мечел-ао
+https://www.dohod.ru/ik/analytics/dividend/mtss;МТС
+https://www.dohod.ru/ik/analytics/dividend/mvid;М.Видео
+https://www.dohod.ru/ik/analytics/dividend/nkhp;НКХП
+https://www.dohod.ru/ik/analytics/dividend/nkncp;НКНХ-п
+https://www.dohod.ru/ik/analytics/dividend/nknc;НКНХ-ао
+https://www.dohod.ru/ik/analytics/dividend/nlmk;НЛМК
+https://www.dohod.ru/ik/analytics/dividend/nmtp;НМТП
+https://www.dohod.ru/ik/analytics/dividend/nvtk;НОВАТЭК
+https://www.dohod.ru/ik/analytics/dividend/obuv;Обувь России
+https://www.dohod.ru/ik/analytics/dividend/ogkb;ОГК-2
+https://www.dohod.ru/ik/analytics/dividend/okey;ОКЕЙ
+https://www.dohod.ru/ik/analytics/dividend/phor;Фосагро
+https://www.dohod.ru/ik/analytics/dividend/pikk;ПИК
+https://www.dohod.ru/ik/analytics/dividend/plzl;Полюс
+https://www.dohod.ru/ik/analytics/dividend/poly;Полиметалл
+https://www.dohod.ru/ik/analytics/dividend/posi;Группа Позитив
+https://www.dohod.ru/ik/analytics/dividend/qiwi;QIWI
+https://www.dohod.ru/ik/analytics/dividend/rasp;Распадская
+https://www.dohod.ru/ik/analytics/dividend/rnft;Русснефть-ао
+https://www.dohod.ru/ik/analytics/dividend/rosn;Роснефть
+https://www.dohod.ru/ik/analytics/dividend/rstip;Россети-п
+https://www.dohod.ru/ik/analytics/dividend/rsti;Россети-ао
+https://www.dohod.ru/ik/analytics/dividend/rtkmp;Ростелеком-п
+https://www.dohod.ru/ik/analytics/dividend/rtkm;Ростелеком-ао
+https://www.dohod.ru/ik/analytics/dividend/rual;Русал
+https://www.dohod.ru/ik/analytics/dividend/sberp;Сбербанк-п
+https://www.dohod.ru/ik/analytics/dividend/sber;Сбербанк-ао
+https://www.dohod.ru/ik/analytics/dividend/selgp;Селигдар-п
+https://www.dohod.ru/ik/analytics/dividend/selg;Селигдар ао
+https://www.dohod.ru/ik/analytics/dividend/sfin;Сафмар
+https://www.dohod.ru/ik/analytics/dividend/sgzh;Сегежа
+https://www.dohod.ru/ik/analytics/dividend/sibn;Газпром нефть
+https://www.dohod.ru/ik/analytics/dividend/smlt;ГК Самолет
+https://www.dohod.ru/ik/analytics/dividend/sngsp;Сургутнефтегаз-п
+https://www.dohod.ru/ik/analytics/dividend/sngs;Сургутнефтегаз-ао
+https://www.dohod.ru/ik/analytics/dividend/svav;Соллерс
+https://www.dohod.ru/ik/analytics/dividend/tatnp;Татнефть-п
+https://www.dohod.ru/ik/analytics/dividend/tatn;Татнефть-ао
+https://www.dohod.ru/ik/analytics/dividend/tcsgr;TCS Group
+https://www.dohod.ru/ik/analytics/dividend/tgka;ТГК-1
+https://www.dohod.ru/ik/analytics/dividend/trmk;ТМК
+https://www.dohod.ru/ik/analytics/dividend/trnfp;Транснефть-п
+https://www.dohod.ru/ik/analytics/dividend/ttlk;Таттелеком
+https://www.dohod.ru/ik/analytics/dividend/upro;Юнипро
+https://www.dohod.ru/ik/analytics/dividend/vsmo;ВСМПО-АВИСМА
+https://www.dohod.ru/ik/analytics/dividend/vtbr;ВТБ
+https://www.dohod.ru/ik/analytics/dividend/yndx;Яндекс

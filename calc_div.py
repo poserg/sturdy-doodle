@@ -30,8 +30,12 @@ def load_dividends(url):
 	soap = BeautifulSoup(response.text, 'lxml')
 	divs = soap.findChildren('table')
 
-	table = divs[2]
 	result = []
+	# print(divs)
+	if len(divs) < 3:
+		print("skip " + url)
+		return result		
+	table = divs[2]
 	for row in table.findChildren(['th', 'tr']):
 		cells = row.findChildren('td')
 		line = []
@@ -40,7 +44,16 @@ def load_dividends(url):
 			line.append(cell.text.strip())
 	return result
 
+def main():
+	with open('dividends_links.txt', 'r') as f:
+		lines = [line.rstrip() for line in f]
+	for l in lines:
+		lst = l.split(";")
+		url = lst[0]
+		name = lst[1]
+		table = load_dividends(url)
+		divs = parse_dividends(table)
+		print(name, divs)	
+
 if __name__ == "__main__":
-	table = load_dividends('https://www.dohod.ru/ik/analytics/dividend/agro')
-	divs = parse_dividends(table)
-	print(divs)
+	main()
