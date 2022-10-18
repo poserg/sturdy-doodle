@@ -53,6 +53,8 @@ def load_dividends(url):
 def main():
 	with open('dividends_links.txt', 'r') as f:
 		lines = [line.rstrip() for line in f]
+
+	companies = []
 	for l in lines:
 		lst = l.split(";")
 		url = lst[0]
@@ -62,15 +64,23 @@ def main():
 			continue
 		divs = parse_dividends(table)
 		print(name, divs)
+		s = 0
+		for d in divs:
+			s = s + d
+		if s == 0:
+			continue
 		company = Company(name)
 		company.divs = divs
+		company.equities = select_equity_by_interval(get_equity(name), 2006, 2022)
+		print(company)
+		companies.append(company)
 
 def get_equity(name):
 	dirs = os.listdir('./out/')
 
 	filename = None
 	for file in dirs:
-		if name.lower() == file.lower():
+		if name.lower() == file.lower() or name.lower() + ' ао' == file.lower():
 			filename = file
 			break
 	if filename:
@@ -100,6 +110,4 @@ def select_equity_by_interval(equities, start_year, end_year):
 	return result
 
 if __name__ == "__main__":
-	# main()
-	# get_equity('Арсагера')
-	select_equity_by_interval(get_equity('Арсагера'), 2006, 2022)
+	main()
