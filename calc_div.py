@@ -50,7 +50,7 @@ def load_dividends(url):
 			line.append(cell.text.strip())
 	return result
 
-def main():
+def aggregate_companies():
 	with open('dividends_links.txt', 'r') as f:
 		lines = [line.rstrip() for line in f]
 
@@ -72,8 +72,22 @@ def main():
 		company = Company(name)
 		company.divs = divs
 		company.equities = select_equity_by_interval(get_equity(name), 2006, 2022)
-		print(company)
 		companies.append(company)
+	return companies
+
+def main():
+	companies=aggregate_companies()
+	for c in companies:
+		s = c.name
+		for i in c.equities:
+			s = s + ';' + str(i)
+		print (s)
+	print("\n\n")
+	for c in companies:
+		s = c.name
+		for i in c.divs:
+			s = s + ';' + str(i)
+		print (s)
 
 def get_equity(name):
 	dirs = os.listdir('./out/')
