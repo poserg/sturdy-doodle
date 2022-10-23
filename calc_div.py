@@ -5,31 +5,26 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
+import pandas as pd
+from datetime import datetime
+
 class Company:
 
 	def __init__(self, name):
 	    self.name = name
 
-def parse_dividends(lines):
-	r = {}
-	for i in range(2006, 2022):
-		r[i] = 0
+def parse_dividends(lines, start_year, end_year, period = 'Y'):
+	df = pd.DataFrame(lines, columns=['announce', 'date', 'year', 'amount'])
+	df['date'] = pd.to_datetime(df['date'], format='%d.%m.%Y', errors='coerce')
+	df['amount'] = df['amount'].astype(float)
+	dates = pd.DataFrame(pd.date_range(datetime(start_year, 1, 1), datetime(end_year-1, 12, 31), freq = 'D'), columns=['date'])
 
-	for l in lines:
-		# print(l)
-		if len(l) < 4 or len(l[1]) != 10:
-			continue
-		key=int(l[1][-4:])
-		if key in r:
-			value=float(l[3])
-			# print(value)
-			r[key]=r[key]+value
-
-	result = []
-	for i in sorted(r.keys()):
-	    result.append(r[i])
-
-	return result
+	df.set_index('date')
+	df = dates.merge(df, how='left', on='date')
+	# print(df)
+	df = df.groupby(df['date'].dt.to_period(period))['amount'].sum()
+	df = df.round(5)
+	return df.values.tolist()
 
 def load_dividends(url):
 	response = requests.get(url)
@@ -62,7 +57,7 @@ def aggregate_companies():
 		table = load_dividends(url)
 		if len(table) == 0:
 			continue
-		divs = parse_dividends(table)
+		divs = parse_dividends(table, 2006, 2022)
 		print(name, divs)
 		s = 0
 		for d in divs:
