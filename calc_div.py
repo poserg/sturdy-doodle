@@ -20,7 +20,7 @@ def parse_dividends(lines, start_year, end_year, period = 'Y'):
 	df = dates.merge(df, how='left', on='date')
 	# print(df)
 	df = df.groupby(df['date'].dt.to_period(period))['amount'].sum()
-	df = df.round(5)
+	df = df.round(6)
 	return df.values.tolist()
 
 def load_dividends(url):
