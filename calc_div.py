@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import argparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -41,10 +42,16 @@ def load_dividends(url):
 			line.append(cell.text.strip())
 	return result
 
-def main(url):
+def main(url, start_year, end_year, period):
 	table = load_dividends(url)
-	result = parse_dividends(table, 2006, 2022)
+	result = parse_dividends(table, start_year, end_year, period)
 	print (result)
 
 if __name__ == "__main__":
-	main(sys.argv[1])
+	parser = argparse.ArgumentParser()
+	parser.add_argument(dest='url')
+	parser.add_argument('-sy', type=int, dest='start_year', default=2006)
+	parser.add_argument('-ey', dest='end_year', default=2022)
+	parser.add_argument('-p', dest='period', default='Y', choices=['Q', 'Y'])
+	args = parser.parse_args()
+	main(args.url, args.start_year, args.end_year, args.period)
