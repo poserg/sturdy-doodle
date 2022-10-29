@@ -11,7 +11,7 @@ class Company:
 	    self.name = name
 
 def aggregate_companies():
-	with open('dividends_links.txt', 'r') as f:
+	with open('./rsrc/dividends_links.txt', 'r') as f:
 		lines = [line.rstrip() for line in f]
 
 	companies = []

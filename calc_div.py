@@ -51,7 +51,7 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument(dest='url')
 	parser.add_argument('-sy', type=int, dest='start_year', default=2006)
-	parser.add_argument('-ey', dest='end_year', default=2022)
+	parser.add_argument('-ey', type=int, dest='end_year', default=2022)
 	parser.add_argument('-p', dest='period', default='Y', choices=['Q', 'Y'])
 	args = parser.parse_args()
 	main(args.url, args.start_year, args.end_year, args.period)
