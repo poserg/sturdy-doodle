@@ -52,3 +52,35 @@ pipenv shell
 ```bash
 ./calc_div.py https://www.dohod.ru/ik/analytics/dividend/sberp -sy 2012 -ey 2018 -p Q 
 ```
+
+# Сопоставление акций и дивидендов
+
+Настройка окружения аналогична [пункту](#%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F) из дивидендов.
+
+## Переименование файлов с котировками акций
+
+Соответствие между акциями и облигациями происходит по именам из [файла ссылок на дивидендов](./rsrc/dividends_links.txt) и названиям файлов с котировками акций. Т.к. по умолчанию они не совпадают, то приходится переименовывать следующим скриптом:
+
+```bash
+for i in `ls`
+do
+	nn=`sed -n 2p $i | grep "^[^;]\+" -o`
+	mv $i $nn
+done
+
+./rename.sh
+```
+
+Скрипт для переименования получен следующим скриптом:
+```bash
+IFS=$(echo -en "\n\b")
+for i in `ls *.txt -b`
+do
+	nn=$(sed -n 2p $i | grep "^[^;,]\+" -o)
+	cn=$(basename -s .txt $i)
+	if [ "$nn" != "$cn" ]; then
+        printf "%q\n" "mv $nn.txt $cn.txt"
+	fi
+done
+```
+
