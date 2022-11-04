@@ -2,7 +2,7 @@
 
 import unittest
 
-from main.mfd import MfdClient
+from mfd.mfd import MfdClient
 # import logging
 
 
