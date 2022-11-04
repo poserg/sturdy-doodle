@@ -1,2 +1,6 @@
 out
 *.pyc
+
+*.sublime-workspace
+
+config.ini
