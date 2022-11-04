@@ -3,8 +3,15 @@
 import unittest
 
 from main.mfd import MfdClient
+import logging
+
 
 class Mfd(unittest.TestCase):
+
+
+	# def setUp(self):
+	# 	logging.basicConfig(level=logging.DEBUG)
+	# 	logging.getLogger().setLevel(logging.DEBUG)
 
 	def test_get_last_quote(self):
 		client = MfdClient()
