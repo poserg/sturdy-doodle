@@ -35,7 +35,7 @@ class MfdClient:
 
     def _get(self, ticker, start, end, period):
         response = requests.get(
-            self.url, 
+            self.url,
             params={
                 'TickerGroup': '11',
                 'Tickers': f'{ticker}',
@@ -58,4 +58,5 @@ class MfdClient:
                 'RecordFormat': '2',
                 'Fill': 'false'
             },)
-        return [line for line in response.text.split('\r\n') if line.strip() != '']
+        return [line for line in response.text.split('\r\n')
+                if line.strip() != '']
