@@ -8,8 +8,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-tickers = [1464]
-
 DATE_FORMAT = '%d.%m.%Y'
 
 
