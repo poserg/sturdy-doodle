@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from clients.mfd import MfdClient
+from clients.smart_lab import SmartLabClient
 import configparser
 import argparse
 import logging
@@ -9,7 +10,20 @@ import logging
 config_file = 'config.ini'
 
 
-def main(tickers):
+def main(tickers, bond):
+    get_stock_prices(tickers)
+    get_bond_prices([bond])
+
+
+def get_bond_prices(bonds):
+    smart_lab = SmartLabClient()
+    for i in bonds:
+        bond = smart_lab.retrieve_bond_info(i)
+        print(str(bond.price).replace('.', ','))
+        print(str(bond.oid).replace('.', ','))
+
+
+def get_stock_prices(tickers):
     mfd = MfdClient()
     for i in tickers:
         date, price = mfd.get_last_quote(i)
@@ -38,4 +52,5 @@ if __name__ == "__main__":
     cfg = configparser.ConfigParser()
     cfg.read_file(open(args.config))
     tickers = cfg['portfolio']['tickers'].split(',')
-    main(tickers)
+    bond = cfg['portfolio']['bond']
+    main(tickers, bond)
