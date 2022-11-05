@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from mfd.mfd import MfdClient
+from clients.mfd import MfdClient
 import configparser
 import argparse
 import logging
