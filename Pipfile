@@ -9,6 +9,7 @@ lxml = "*"
 beautifulsoup4 = "*"
 pandas = "*"
 django = "*"
+django-money = "*"
 
 [dev-packages]
 flake8 = "*"
