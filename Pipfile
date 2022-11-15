@@ -11,6 +11,7 @@ pandas = "*"
 
 [dev-packages]
 flake8 = "*"
+alembic = "*"
 
 [requires]
 python_version = "3.8"
