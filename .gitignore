@@ -4,3 +4,4 @@ out
 *.sublime-workspace
 
 config.ini
+db.sqlite3
