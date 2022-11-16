@@ -20,7 +20,7 @@ class Asset(models.Model):
     ticker = models.CharField(max_length=20, primary_key=True)
     name = models.CharField(max_length=200)
     type = models.CharField(max_length=20, choices=AssetType.choices)
-    amount = models.BigIntegerField(default=0)
+    lots = models.BigIntegerField(default=0)
     shares_in_lot = models.BigIntegerField(default=1)
 
     def __str__(self):

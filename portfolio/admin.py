@@ -4,7 +4,7 @@ from .models import Asset, Transaction
 
 @admin.register(Asset)
 class AssetAdmin(admin.ModelAdmin):
-    list_display = ("ticker", "name", "amount", "shares_in_lot", "type")
+    list_display = ("ticker", "name", "lots", "shares_in_lot", "type")
 
 
 @admin.register(Transaction)
