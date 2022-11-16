@@ -23,9 +23,20 @@ class Asset(models.Model):
     amount = models.BigIntegerField(default=0)
     shares_in_lot = models.BigIntegerField(default=1)
 
+    def __str__(self):
+        return f"{self.name} ({self.ticker}:{self.type})"
+
 
 class Transaction(models.Model):
     datetime = models.DateField()
-    credit = models.ForeignKey(Asset, on_delete=models.PROTECT, related_name='credit')
-    debit = models.ForeignKey(Asset, on_delete=models.PROTECT, related_name='debit')
+    credit = models.ForeignKey(
+        Asset, on_delete=models.PROTECT, related_name='credit')
+    debit = models.ForeignKey(
+        Asset, on_delete=models.PROTECT, related_name='debit')
     price = MoneyField(max_digits=14, decimal_places=2, default_currency='RUB')
+
+    def __str__(self):
+        return f"Transaction({self.datetime}: " + \
+                f"credit={self.credit.ticker}, " + \
+                f"debit={self.debit.ticker}, " + \
+                f"price={self.price!r})"
