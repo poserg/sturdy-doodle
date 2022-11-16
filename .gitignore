@@ -2,6 +2,6 @@ out
 *.pyc
 
 *.sublime-workspace
-
+.idea
 config.ini
 db.sqlite3
