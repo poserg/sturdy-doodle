@@ -33,7 +33,7 @@ class Transaction(models.Model):
         Asset, on_delete=models.PROTECT, related_name='credit')
     debit = models.ForeignKey(
         Asset, on_delete=models.PROTECT, related_name='debit')
-    price = MoneyField(max_digits=14, decimal_places=2, default_currency='RUB')
+    price = MoneyField(max_digits=14, decimal_places=6, default_currency='RUB')
 
     def __str__(self):
         return f"Transaction({self.date.date()}: " + \
