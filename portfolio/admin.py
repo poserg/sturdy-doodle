@@ -1,5 +1,12 @@
 from django.contrib import admin
 from .models import Asset, Transaction
 
-admin.site.register(Asset)
-admin.site.register(Transaction)
+
+@admin.register(Asset)
+class AssetAdmin(admin.ModelAdmin):
+    list_display = ("ticker", "name", "amount", "shares_in_lot", "type")
+
+
+@admin.register(Transaction)
+class TransactionAdmin(admin.ModelAdmin):
+    list_display = ("date", "debit", "price")
