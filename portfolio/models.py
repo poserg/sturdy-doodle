@@ -28,7 +28,7 @@ class Asset(models.Model):
 
 
 class Transaction(models.Model):
-    datetime = models.DateField()
+    date = models.DateTimeField(auto_now_add=True)
     credit = models.ForeignKey(
         Asset, on_delete=models.PROTECT, related_name='credit')
     debit = models.ForeignKey(
@@ -36,7 +36,7 @@ class Transaction(models.Model):
     price = MoneyField(max_digits=14, decimal_places=2, default_currency='RUB')
 
     def __str__(self):
-        return f"Transaction({self.datetime}: " + \
+        return f"Transaction({self.date.date()}: " + \
                 f"credit={self.credit.ticker}, " + \
                 f"debit={self.debit.ticker}, " + \
                 f"price={self.price!r})"
