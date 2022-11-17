@@ -22,6 +22,8 @@ class Asset(models.Model):
     type = models.CharField(max_length=20, choices=AssetType.choices)
     lots = models.BigIntegerField(default=0)
     shares_in_lot = models.BigIntegerField(default=1)
+    price = MoneyField(max_digits=14, decimal_places=6,
+                       default_currency='RUB', default=0)
 
     def __str__(self):
         return f"{self.name} ({self.ticker}:{self.type})"
