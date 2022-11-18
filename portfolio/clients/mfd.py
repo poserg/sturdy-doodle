@@ -29,7 +29,7 @@ class MfdClient:
         quotes = self._get(ticker, start, end, Period.MINUTE)
         last_line = quotes[-1].split(';')
         logger.debug(f'last_line = {last_line}')
-        return last_line[2], last_line[4]
+        return last_line[2], last_line[4], last_line[0]
 
     def _get(self, ticker, start, end, period):
         response = requests.get(
