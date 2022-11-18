@@ -6,9 +6,11 @@ from .models import Asset, Transaction
 class AssetAdmin(admin.ModelAdmin):
     list_display = ("ticker", "name", "lots", "shares_in_lot", "type")
     readonly_fields = [
+        'ticker',
         'lots',
         'name',
         'price',
+        'type',
     ]
 
 
