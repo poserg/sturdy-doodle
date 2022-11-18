@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from clients.mfd import MfdClient
-from clients.smart_lab import SmartLabClient
+from portfolio.clients.mfd import MfdClient
+from portfolio.clients.smart_lab import SmartLabClient
 import configparser
 import argparse
 import logging
