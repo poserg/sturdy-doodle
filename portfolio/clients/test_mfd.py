@@ -2,7 +2,7 @@
 
 import unittest
 
-from clients.mfd import MfdClient
+from portfolio.clients.mfd import MfdClient
 # import logging
 
 
@@ -13,6 +13,8 @@ class Mfd(unittest.TestCase):
 
     def test_get_last_quote(self):
         client = MfdClient()
-        date, price = client.get_last_quote(1464)
-        self.assertRegex(date, '[0-9]{8}')
-        self.assertRegex(price, '^[0-9]+(.[0-9]+)?$')
+        stock = client.get_last_quote('1464')
+        self.assertEqual(stock.name, 'Сбербанк-п')
+        self.assertEqual(stock.ticker, '1464')
+        self.assertRegex(stock.date, '[0-9]{8}')
+        self.assertRegex(stock.price, '^[0-9]+(.[0-9]+)?$')

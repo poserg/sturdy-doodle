@@ -17,6 +17,31 @@ class Period(Enum):
     MONTH = 9
 
 
+class Stock:
+
+    def __init__(self, ticker, name, date, price):
+        self._ticker = ticker
+        self._name = name
+        self._date = date
+        self._price = price
+
+    @property
+    def ticker(self):
+        return self._ticker
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def date(self):
+        return self._date
+
+    @property
+    def price(self):
+        return self._price
+
+
 class MfdClient:
 
     def __init__(self):
@@ -29,7 +54,7 @@ class MfdClient:
         quotes = self._get(ticker, start, end, Period.MINUTE)
         last_line = quotes[-1].split(';')
         logger.debug(f'last_line = {last_line}')
-        return last_line[2], last_line[4], last_line[0]
+        return Stock(ticker, last_line[0], last_line[2], last_line[4])
 
     def _get(self, ticker, start, end, period):
         response = requests.get(

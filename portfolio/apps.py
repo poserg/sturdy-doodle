@@ -20,16 +20,14 @@ class PortfolioConfig(AppConfig):
         exist_tickers = list(
             map(lambda x: x.ticker, Asset.objects.filter(type=type))
         )
-        print(exist_tickers)
         for t in exist_tickers:
             current_tickers.remove(t)
-        print(current_tickers)
 
         if len(current_tickers) == 0:
             return
         mfd = MfdClient()
         for i in current_tickers:
-            date, price, name = mfd.get_last_quote(i)
-            asset = Asset(ticker=i, name=name,
-                          type=type, price=Money(price, 'RUB'))
+            stock = mfd.get_last_quote(i)
+            asset = Asset(ticker=i, name=stock.name,
+                          type=type, price=Money(stock.price, 'RUB'))
             asset.save()

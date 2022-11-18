@@ -26,8 +26,8 @@ def get_bond_prices(bonds):
 def get_stock_prices(tickers):
     mfd = MfdClient()
     for i in tickers:
-        date, price = mfd.get_last_quote(i)
-        print(str(price).replace('.', ','))
+        stock = mfd.get_last_quote(i)
+        print(str(stock.price).replace('.', ','))
 
 
 def parse_args():
