@@ -4,13 +4,15 @@ from .models import Asset, Transaction
 
 @admin.register(Asset)
 class AssetAdmin(admin.ModelAdmin):
-    list_display = ("ticker", "name", "lots", "shares_in_lot", "type")
+    list_display = ("ticker", "name", "balance",
+                    "shares_in_lot", "type", "modified_date")
     readonly_fields = [
         'ticker',
-        'lots',
+        'balance',
         'name',
         'price',
         'type',
+        'modified_date',
     ]
 
 

@@ -4,4 +4,5 @@ out
 *.sublime-workspace
 .idea
 config.ini
-db.sqlite3
+*.sqlite3
+*.sqlite
