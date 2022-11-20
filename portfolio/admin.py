@@ -15,7 +15,13 @@ class AssetAdmin(admin.ModelAdmin):
         'modified_date',
     ]
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+
 
 @admin.register(Transaction)
 class TransactionAdmin(admin.ModelAdmin):
     list_display = ("date", "debit", "price")
+
+    def has_delete_permission(self, request, obj=None):
+        return False
