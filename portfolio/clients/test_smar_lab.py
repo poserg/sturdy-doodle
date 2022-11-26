@@ -16,3 +16,4 @@ class SmartLabTest(unittest.TestCase):
         bond = client.retrieve_bond_info('SU26215RMFS2')
         self.assertEqual(bond.price, 99.747)
         self.assertEqual(bond.oid, 15.72)
+        self.assertEqual(bond.name, 'ОФЗ 26215')
