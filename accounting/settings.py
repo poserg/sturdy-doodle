@@ -127,6 +127,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 config_file = 'config.ini'
 cfg = configparser.ConfigParser()
-cfg.read_file(open(config_file))
-STOCK_TICKERS = cfg['portfolio']['tickers'].split(',')
-BOND_TICKERS = cfg['portfolio']['bond'].split(',')
+try:
+    cfg.read_file(open(config_file))
+    STOCK_TICKERS = cfg['portfolio']['tickers'].split(',')
+    BOND_TICKERS = cfg['portfolio']['bond'].split(',')
+except Exception as e:
+    print(f'Couldn\'t read config file: {e}')
