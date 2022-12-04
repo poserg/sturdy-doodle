@@ -14,6 +14,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='transaction',
             name='price',
-            field=djmoney.models.fields.MoneyField(decimal_places=6, default_currency='RUB', max_digits=14),
+            field=djmoney.models.fields.MoneyField(decimal_places=6,
+                                                   default_currency='RUB',
+                                                   max_digits=14),
         ),
     ]
