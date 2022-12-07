@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import configparser
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -130,11 +129,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-config_file = 'config.ini'
-cfg = configparser.ConfigParser()
-try:
-    cfg.read_file(open(config_file))
-    STOCK_TICKERS = cfg['portfolio']['tickers'].split(',')
-    BOND_TICKERS = cfg['portfolio']['bond'].split(',')
-except Exception as e:
-    print(f'Couldn\'t read config file: {e}')
+STOCK_TICKERS = config('STOCKS').split(',')
+BOND_TICKERS = config('BONDS').split(',')
