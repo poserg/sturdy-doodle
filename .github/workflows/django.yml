@@ -29,3 +29,5 @@ jobs:
       run: |
         pipenv install --dev
         pipenv run ./manage.py test
+      env:
+        SECRET_KEY: strong secret
