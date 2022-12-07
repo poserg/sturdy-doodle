@@ -6,3 +6,5 @@ out
 config.ini
 *.sqlite3
 *.sqlite
+
+.env

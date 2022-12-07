@@ -10,6 +10,7 @@ beautifulsoup4 = "*"
 pandas = "*"
 django = "*"
 django-money = "*"
+python-decouple = "*"
 
 [dev-packages]
 flake8 = "*"
