@@ -31,3 +31,5 @@ jobs:
         pipenv run ./manage.py test
       env:
         SECRET_KEY: strong secret
+        STOCKS: test_stock
+        BONDS: test_bond
