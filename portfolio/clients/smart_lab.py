@@ -30,7 +30,7 @@ class SmartLabClient:
     def __init__(self):
         self.url = 'https://smart-lab.ru/q/bonds/'
 
-    def retrieve_bond_info(self, ticker):
+    def retrieve_bond_info(self, ticker) -> Bond:
         bond_table = self._get_bond_table(self.url + ticker)
         price = None
         oid = None

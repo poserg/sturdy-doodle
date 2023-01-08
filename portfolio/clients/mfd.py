@@ -47,14 +47,18 @@ class MfdClient:
     def __init__(self):
         self.url = "https://mfd.ru/export/handler.ashx/mfdexport.txt"
 
-    def get_last_quote(self, ticker):
+    def get_last_quote(self, ticker) -> Stock:
         today = datetime.today()
         end = today.strftime(DATE_FORMAT)
         start = (today-timedelta(days=7)).strftime(DATE_FORMAT)
         quotes = self._get(ticker, start, end, Period.MINUTE)
-        last_line = quotes[-1].split(';')
-        logger.debug(f'last_line = {last_line}')
-        return Stock(ticker, last_line[0], last_line[2], last_line[4])
+        if len(quotes) == 0:
+            logger.debug(f'Ticker {ticker} does not exist!')
+            return Stock(ticker, 'n/a', 'n/a', 'n/a')
+        else:
+            logger.debug(f'last_line = {quotes[-1]}')
+            last_line = quotes[-1].split(';')
+            return Stock(ticker, last_line[0], last_line[2], last_line[4])
 
     def _get(self, ticker, start, end, period):
         response = requests.get(
