@@ -3,26 +3,32 @@
 import unittest
 
 from portfolio.clients.mfd import MfdClient
-from unittest.mock import patch
-# import logging
+from unittest.mock import patch, MagicMock
+import logging
 
 
 class Mfd(unittest.TestCase):
-    # def setUp(self):
-    #   logging.basicConfig(level=logging.DEBUG)
-    #   logging.getLogger().setLevel(logging.DEBUG)
+    def setUp(self):
+        logging.basicConfig(level=logging.DEBUG)
+        logging.getLogger().setLevel(logging.DEBUG)
+        self.client = MfdClient()
 
-    def test_get_last_quote(self):
-        client = MfdClient()
-        stock = client.get_last_quote('1464')
+    @patch('portfolio.clients.mfd.requests')
+    def test_get_last_quote(self, mock_requests):
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.text = 'Сбербанк-п;1;20230106;234900;140.12;10'
+        mock_requests.get.return_value = mock_response
+
+        stock = self.client.get_last_quote('1464')
         self.assertEqual(stock.name, 'Сбербанк-п')
         self.assertEqual(stock.ticker, '1464')
-        self.assertRegex(stock.date, '[0-9]{8}')
-        self.assertRegex(stock.price, '^[0-9]+(.[0-9]+)?$')
+        self.assertEqual(stock.date, '20230106')
+        self.assertEqual(stock.price, '140.12')
 
     @patch('portfolio.clients.mfd.requests')
     def test_get_last_quote_with_empty_response(self, mock_requests):
         mock_requests.get.text.return_value = ''
-        client = MfdClient()
-        stock = client.get_last_quote('1464')
+
+        stock = self.client.get_last_quote('1464')
         self.assertEqual(stock.price, 'n/a')
