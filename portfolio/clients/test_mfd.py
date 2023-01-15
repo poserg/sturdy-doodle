@@ -2,7 +2,7 @@
 
 import unittest
 
-from portfolio.clients.mfd import MfdClient, Period
+from portfolio.clients.mfd import MfdClient
 from unittest.mock import patch, MagicMock
 import logging
 
@@ -41,8 +41,7 @@ class Mfd(unittest.TestCase):
         with open('portfolio/clients/fixture_sber_202001_202212.txt',
                   'r') as f:
             mock_response.text = f.read()
-        stocks = self.client.get_by_year('1464', '01.01.2020', '01.01.2023',
-                                         Period.MONTH)
+        stocks = self.client.get_by_year('1464', '01.01.2020', '01.01.2023')
 
         self.assertEqual(stocks[0].date, '20201201')
         self.assertEqual(stocks[1].date, '20211201')

@@ -8,6 +8,7 @@ import argparse
 import logging
 
 config_file = 'config.ini'
+year = None
 
 
 def main(tickers, bond):
@@ -19,15 +20,27 @@ def get_bond_prices(bonds):
     smart_lab = SmartLabClient()
     for i in bonds:
         bond = smart_lab.retrieve_bond_info(i)
-        print(str(bond.price).replace('.', ','))
-        print(str(bond.oid).replace('.', ','))
+        print(_num_to_str, bond.price)
+        print(_num_to_str, bond.oid)
+
+
+def _num_to_str(string):
+    return str(string).replace('.', ',')
 
 
 def get_stock_prices(tickers):
     mfd = MfdClient()
     for i in tickers:
-        stock = mfd.get_last_quote(i)
-        print(str(stock.price).replace('.', ','))
+        if year:
+            stocks = mfd.get_by_year(
+                i,
+                '01.01.' + str(year),
+                '01.12.' + str((year+1)))
+            for s in stocks:
+                print(f"{s.name};+{_num_to_str(s.price)}")
+        else:
+            stock = mfd.get_last_quote(i)
+            print(map(_num_to_str, stock.price))
 
 
 def parse_args():
@@ -36,6 +49,12 @@ def parse_args():
                         help='Config file (default \'%s\')' % config_file,
                         default=config_file,
                         dest='config',
+                        )
+    parser.add_argument('-y',
+                        help='Year (default: None)',
+                        default=None,
+                        dest='year',
+                        type=int,
                         )
     parser.add_argument('-v',
                         '--verbose',
@@ -48,6 +67,7 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
+    year = args.year
     logging.basicConfig(level=args.log_level or logging.INFO)
     cfg = configparser.ConfigParser()
     cfg.read_file(open(args.config))

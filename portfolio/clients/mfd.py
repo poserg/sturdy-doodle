@@ -67,8 +67,8 @@ class MfdClient:
         quotes = self._get(ticker, start, end, period)
         return list(map(lambda x: self._parse(ticker, x), quotes))
 
-    def get_by_year(self, ticker, start, end, period):
-        quotes = self._get(ticker, start, end, period)
+    def get_by_year(self, ticker, start, end):
+        quotes = self._get(ticker, start, end, Period.MONTH)
         return list(
             filter(
                 lambda x: x.date.endswith('1201'),
