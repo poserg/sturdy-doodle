@@ -57,8 +57,22 @@ class MfdClient:
             return Stock(ticker, 'n/a', 'n/a', 'n/a')
         else:
             logger.debug(f'last_line = {quotes[-1]}')
-            last_line = quotes[-1].split(';')
-            return Stock(ticker, last_line[0], last_line[2], last_line[4])
+            return self._parse(ticker, quotes[-1])
+
+    def _parse(self, ticker, quote_line):
+        line = quote_line.split(';')
+        return Stock(ticker, line[0], line[2], line[4])
+
+    def get(self, ticker, start, end, period):
+        quotes = self._get(ticker, start, end, period)
+        return list(map(lambda x: self._parse(ticker, x), quotes))
+
+    def get_by_year(self, ticker, start, end, period):
+        quotes = self._get(ticker, start, end, period)
+        return list(
+            filter(
+                lambda x: x.date.endswith('1201'),
+                map(lambda x: self._parse(ticker, x), quotes)))
 
     def _get(self, ticker, start, end, period):
         response = requests.get(
@@ -85,5 +99,5 @@ class MfdClient:
                 'RecordFormat': '2',
                 'Fill': 'false'
             },)
-        return [line for line in response.text.split('\r\n')
+        return [line for line in response.text.split('\n')
                 if line.strip() != '']
