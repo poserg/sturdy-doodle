@@ -12,23 +12,23 @@ year = None
 
 
 def main(tickers, bond):
-    get_stock_prices(tickers)
-    get_bond_prices([bond])
+    print_stock_prices(tickers)
+    print_bond_prices([bond])
 
 
-def get_bond_prices(bonds):
+def print_bond_prices(bonds):
     smart_lab = SmartLabClient()
     for i in bonds:
         bond = smart_lab.retrieve_bond_info(i)
-        print(_num_to_str, bond.price)
-        print(_num_to_str, bond.oid)
+        print(_num_to_str(bond.price))
+        print(_num_to_str(bond.oid))
 
 
 def _num_to_str(string):
     return str(string).replace('.', ',')
 
 
-def get_stock_prices(tickers):
+def print_stock_prices(tickers):
     mfd = MfdClient()
     for i in tickers:
         if year:
@@ -37,10 +37,10 @@ def get_stock_prices(tickers):
                 '01.01.' + str(year),
                 '01.12.' + str((year+1)))
             for s in stocks:
-                print(f"{s.name};+{_num_to_str(s.price)}")
+                print(f"{s.name};{_num_to_str(s.price)}")
         else:
             stock = mfd.get_last_quote(i)
-            print(map(_num_to_str, stock.price))
+            print(_num_to_str(stock.price))
 
 
 def parse_args():
