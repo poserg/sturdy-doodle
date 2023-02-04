@@ -11,17 +11,16 @@ config_file = 'config.ini'
 year = None
 
 
-def main(tickers, bond):
+def main(tickers, bonds):
     print_stock_prices(tickers)
-    print_bond_prices([bond])
+    print_bond_prices(bonds)
 
 
 def print_bond_prices(bonds):
     smart_lab = SmartLabClient()
     for i in bonds:
         bond = smart_lab.retrieve_bond_info(i)
-        print(_num_to_str(bond.price))
-        print(_num_to_str(bond.oid))
+        print(_num_to_str(bond.price), _num_to_str(bond.oid))
 
 
 def _num_to_str(string):
@@ -72,5 +71,5 @@ if __name__ == "__main__":
     cfg = configparser.ConfigParser()
     cfg.read_file(open(args.config))
     tickers = cfg['portfolio']['tickers'].split(',')
-    bond = cfg['portfolio']['bond']
-    main(tickers, bond)
+    bonds = cfg['portfolio']['bond'].split(',')
+    main(tickers, bonds)
