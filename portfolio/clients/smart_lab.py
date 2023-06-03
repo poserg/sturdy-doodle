@@ -47,6 +47,7 @@ class SmartLabClient:
                     return Bond(name, price, float(oid.split(' ')[0]))
 
     def _get_bond_table(self, url):
+        logger.debug('url = ' + url)
         response = requests.get(url)
         soap = BeautifulSoup(response.text, 'html.parser')
         bond_table = soap.find_all('table')
