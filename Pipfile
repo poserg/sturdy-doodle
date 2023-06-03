@@ -11,6 +11,8 @@ pandas = "*"
 django = "*"
 django-money = "*"
 python-decouple = "*"
+pytest = "*"
+pytest-django = "*"
 
 [dev-packages]
 flake8 = "*"
