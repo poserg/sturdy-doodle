@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from portfolio.clients.mfd import MfdClient
-from portfolio.clients.smart_lab import SmartLabClient
 from portfolio.clients.dohod import DohodClient
 import configparser
 import argparse

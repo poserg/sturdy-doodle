@@ -7,7 +7,7 @@ def test_get_last_quote(mock_requests):
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.text = """
-            [
+        [
           {
             "id": "RU000A103HT3_TQCB",
             "xml_isin": "RU000A103HT3",
@@ -148,7 +148,7 @@ def test_get_last_quote(mock_requests):
             "couponpercent": "8.10"
           }
         ]
-    """
+    """ # noqa
     mock_requests.post.return_value = mock_response
     client = DohodClient()
     bond = client.get_last_quote('RU000A103HT3')
