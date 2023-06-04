@@ -3,6 +3,7 @@
 
 from portfolio.clients.mfd import MfdClient
 from portfolio.clients.smart_lab import SmartLabClient
+from portfolio.clients.dohod import DohodClient
 import configparser
 import argparse
 import logging
@@ -17,9 +18,9 @@ def main(tickers, bonds):
 
 
 def print_bond_prices(bonds):
-    smart_lab = SmartLabClient()
+    client = DohodClient()
     for i in bonds:
-        bond = smart_lab.retrieve_bond_info(i)
+        bond = client.get_last_quote(i)
         print(_num_to_str(bond.price), _num_to_str(bond.oid))
 
 
