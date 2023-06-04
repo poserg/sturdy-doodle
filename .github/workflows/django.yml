@@ -28,7 +28,7 @@ jobs:
     - name: Run Tests
       run: |
         pipenv install --dev
-        pipenv run ./manage.py test
+        pipenv run pytest
       env:
         SECRET_KEY: strong secret
         STOCKS: test_stock
