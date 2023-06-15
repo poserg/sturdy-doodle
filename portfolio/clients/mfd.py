@@ -14,6 +14,7 @@ DATE_FORMAT = '%d.%m.%Y'
 class Period(Enum):
     MINUTE = 1
     HOUR = 6
+    DAY = 7
     MONTH = 9
 
 
@@ -51,7 +52,7 @@ class MfdClient:
         today = datetime.today()
         end = today.strftime(DATE_FORMAT)
         start = (today-timedelta(days=7)).strftime(DATE_FORMAT)
-        quotes = self._get(ticker, start, end, Period.MINUTE)
+        quotes = self._get(ticker, start, end, Period.DAY)
         if len(quotes) == 0:
             logger.debug(f'Ticker {ticker} does not exist!')
             return Stock(ticker, 'n/a', 'n/a', 'n/a')
