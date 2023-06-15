@@ -22,7 +22,7 @@ class DohodClient:
         return Bond(
             quote['name'],
             quote['last'],
-            quote['couponvalue'])
+            quote['accruedint'])
 
     def _get(self, isin):
         r = requests.post(

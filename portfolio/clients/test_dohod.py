@@ -154,4 +154,4 @@ def test_get_last_quote(mock_requests):
     bond = client.get_last_quote('RU000A103HT3')
     assert bond.name == 'МВ ФИН 1Р2'
     assert bond.price == '94.68'
-    assert bond.oid == '20.19'
+    assert bond.oid == '5.77'
