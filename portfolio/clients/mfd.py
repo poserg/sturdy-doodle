@@ -51,8 +51,11 @@ class MfdClient:
     def get_last_quote(self, ticker) -> Stock:
         today = datetime.today()
         end = today.strftime(DATE_FORMAT)
-        start = (today-timedelta(days=7)).strftime(DATE_FORMAT)
-        quotes = self._get(ticker, start, end, Period.DAY)
+        for interval in [(0, Period.HOUR), (1, Period.HOUR), (2, Period.DAY), (5, Period.DAY), (7, Period.DAY)]:
+            start = (today-timedelta(days=interval[0])).strftime(DATE_FORMAT)
+            quotes = self._get(ticker, start, end, interval[1])
+            if len(quotes) != 0:
+                break
         if len(quotes) == 0:
             logger.debug(f'Ticker {ticker} does not exist!')
             return Stock(ticker, 'n/a', 'n/a', 'n/a')
