@@ -2,7 +2,7 @@
 
 import unittest
 
-from portfolio.clients.mfd import MfdClient
+from portfolio.clients.mfd import MfdClient, MfdWebClient
 from unittest.mock import patch, MagicMock
 import logging
 
@@ -63,3 +63,26 @@ class Mfd(unittest.TestCase):
         self.assertEqual(stocks[1].date, '20211201')
         self.assertEqual(stocks[2].name, 'Сбербанк-п')
         self.assertEqual(stocks[2].date, '20221201')
+
+
+class MfdWeb(unittest.TestCase):
+
+    def setUp(self):
+        self.client = MfdWebClient()
+
+    @patch('portfolio.clients.mfd.requests')
+    def test_get_last_quote(self, mock_requests):
+        mock_response = MagicMock()
+        mock_requests.get.return_value = mock_response
+        mock_response.status_code = 200
+        with open('portfolio/clients/tests/fixture-gmkn.html', 'r') as f:
+            mock_response.text = f.read()
+
+        stock = self.client.get_last_quote('336')
+
+        self.assertEqual(
+            stock.name,
+            'Норильский никель (ГМКНорНик, GMKN: МосБиржа Акции и ПИФы)')
+        self.assertEqual(stock.ticker, '336')
+        self.assertEqual(stock.date, 'вчера, 23:50:04')
+        self.assertEqual(stock.price, '15178')

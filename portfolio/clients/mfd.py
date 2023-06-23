@@ -4,6 +4,7 @@ import requests
 from datetime import datetime, timedelta
 from enum import Enum
 import logging
+from bs4 import BeautifulSoup
 
 
 logger = logging.getLogger(__name__)
@@ -105,3 +106,31 @@ class MfdClient:
             },)
         return [line for line in response.text.split('\n')
                 if line.strip() != '']
+
+
+class MfdWebClient:
+    def __init__(self):
+        self.url = "https://m.mfd.ru/marketdata/ticker"
+
+    def get_last_quote(self, ticker) -> Stock:
+        html = self._get(ticker)
+        return self._parse(ticker, html)
+
+    def _parse(self, ticker, html):
+        return Stock(
+            ticker,
+            html.find(
+                "h1").text.strip(),
+            html.find("div", class_="m-companytable-time").text,
+            html.find("div", class_="m-companytable-last")
+                .text
+                .replace(" ", ""))
+
+    def _get(self, ticker):
+        response = requests.get(
+            self.url,
+            params={
+                'id': f'{ticker}'
+            })
+        soap = BeautifulSoup(response.text, 'html.parser')
+        return soap

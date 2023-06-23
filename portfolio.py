@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from portfolio.clients.mfd import MfdClient
+from portfolio.clients.mfd import MfdClient, MfdWebClient
 from portfolio.clients.dohod import DohodClient
 import configparser
 import argparse
@@ -29,6 +29,7 @@ def _num_to_str(string):
 
 def print_stock_prices(tickers):
     mfd = MfdClient()
+    mfdWeb = MfdWebClient()
     for i in tickers:
         if year:
             stocks = mfd.get_by_year(
@@ -38,7 +39,7 @@ def print_stock_prices(tickers):
             for s in stocks:
                 print(f"{s.name};{_num_to_str(s.price)}")
         else:
-            stock = mfd.get_last_quote(i)
+            stock = mfdWeb.get_last_quote(i)
             print(_num_to_str(stock.price))
 
 
