@@ -24,7 +24,7 @@ def print_bond_prices(bonds):
 
 
 def _num_to_str(string):
-    return str(string).replace('.', ',')
+    return string 
 
 
 def print_stock_prices(tickers):

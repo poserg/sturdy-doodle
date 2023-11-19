@@ -13,9 +13,10 @@ django-money = "*"
 python-decouple = "*"
 pytest = "*"
 pytest-django = "*"
+typing-extensions = "*"
 
 [dev-packages]
 flake8 = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.10"
