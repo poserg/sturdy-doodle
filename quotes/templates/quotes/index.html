@@ -1,0 +1,20 @@
+{% if quotes %}
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    {% for quote in quotes %}
+        <tr>
+            <td>{{ quote.ticker }}</td>
+            <td>{{ quote.name }}</td>
+            <td>{{ quote.date }}</td>
+            <td>{{ quote.price }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No quotes are available.</p>
+{% endif %}
