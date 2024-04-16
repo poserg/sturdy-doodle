@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'portfolio.apps.PortfolioConfig',
-    'djmoney',
+    # 'portfolio.apps.PortfolioConfig',
+    # 'djmoney',
+    'quotes',
 ]
 
 MIDDLEWARE = [
