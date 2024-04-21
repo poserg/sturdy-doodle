@@ -11,5 +11,5 @@ def index(request):
     stocks = []
     for i in settings.STOCK_TICKERS:
         stocks.append(mfd.get_last_quote(i))
-    context = {"quotes": stocks}
+    context = {"name": "Stocks", "quotes": stocks}
     return render(request, "quotes/index.html", context)
