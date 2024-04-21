@@ -12,12 +12,12 @@ def stocks(request):
     quotes = []
     for i in settings.STOCK_TICKERS:
         quotes.append(mfd.get_last_quote(i))
-    context = {"name": "Stocks", "quotes": quotes}
+    context = {"quotes": quotes}
     return render(request, "quotes/stocks.html", context)
 
 def bonds(request):
     quotes = []
     for i in settings.BOND_TICKERS:
         quotes.append(dohod_client.get_last_quote(i))
-    context = {"name": "Bonds", "quotes": quotes}
+    context = {"quotes": quotes}
     return render(request, "quotes/bonds.html", context)
