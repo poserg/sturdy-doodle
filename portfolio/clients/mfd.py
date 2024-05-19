@@ -119,13 +119,19 @@ class MfdWebClient:
 
     def get_last_quote(self, ticker) -> Stock:
         html = self._get(ticker)
-        return self._parse(ticker, html)
+        return self._parse(html)
 
-    def _parse(self, ticker, html):
+    def _parse(self, html):
+        full_name = html.find("h1").text.strip().split(' (', 1)
+        if len(full_name) > 1:
+            full_name = full_name[1]
+        else:
+            full_name = full_name[0]
+        full_name = full_name.split(': ', 1)[0].split(', ', 1)
+
         return Stock(
-            ticker,
-            html.find(
-                "h1").text.strip(),
+            full_name[1],
+            full_name[0],
             html.find("div", class_="m-companytable-time").text,
             html.find("div", class_="m-companytable-last")
                 .text
