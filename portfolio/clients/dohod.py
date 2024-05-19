@@ -20,6 +20,7 @@ class DohodClient:
     def get_last_quote(self, isin):
         quote = self._get(isin)[0]
         return Bond(
+            isin,
             quote['name'],
             quote['last'],
             quote['accruedint'])

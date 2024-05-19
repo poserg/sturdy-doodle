@@ -7,10 +7,15 @@ logger = logging.getLogger(__name__)
 
 class Bond:
 
-    def __init__(self, name, price, oid):
+    def __init__(self, ticker, name, price, oid):
+        self._ticker = ticker
         self._name = name
         self._price = price
         self._oid = oid  # Original Issue Discount
+
+    @property
+    def ticker(self):
+        return self._ticker
 
     @property
     def name(self):
