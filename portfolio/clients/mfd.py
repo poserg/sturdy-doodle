@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 
 logger = logging.getLogger(__name__)
+# logging.basicConfig(level=logging.DEBUG)
 
 DATE_FORMAT = '%d.%m.%Y'
 
@@ -43,6 +44,8 @@ class Stock:
     def price(self):
         return self._price
 
+    def __repr__(self):
+        return f"<Stock ticker:{self.ticker}, name:{self.name}, date:{self.date}, price:{self.price}>"
 
 class MfdClient:
 

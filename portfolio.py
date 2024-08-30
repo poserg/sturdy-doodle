@@ -3,6 +3,7 @@
 
 from portfolio.clients.mfd import MfdClient, MfdWebClient
 from portfolio.clients.dohod import DohodClient
+from portfolio.clients.tbank import TBankClient
 import configparser
 import argparse
 import logging
@@ -30,6 +31,7 @@ def _num_to_str(string):
 def print_stock_prices(tickers):
     mfd = MfdClient()
     mfdWeb = MfdWebClient()
+    tbank = TBankClient()
     for i in tickers:
         if year:
             stocks = mfd.get_by_year(
@@ -39,7 +41,7 @@ def print_stock_prices(tickers):
             for s in stocks:
                 print(f"{s.name};{_num_to_str(s.price)}")
         else:
-            stock = mfdWeb.get_last_quote(i)
+            stock = tbank.get_last_quote(i)
             print(_num_to_str(stock.price))
 
 
@@ -71,6 +73,6 @@ if __name__ == "__main__":
     logging.basicConfig(level=args.log_level or logging.INFO)
     cfg = configparser.ConfigParser()
     cfg.read_file(open(args.config))
-    tickers = cfg['portfolio']['tickers'].split(',')
+    tickers = cfg['portfolio']['tbank_tickers'].split(',')
     bonds = cfg['portfolio']['bond'].split(',')
     main(tickers, bonds)
