@@ -27,6 +27,7 @@ class TBankFuturesClient:
         for item in items:
             result.append(Future(
                 item["instrumentInfo"]["ticker"],
+                item["viewInfo"]["showName"],
                 item["instrumentInfo"]["basicAsset"],
                 item["instrumentInfo"]["basicAssetType"],
                 item["instrumentInfo"]["daysTillLastTrade"],
@@ -49,12 +50,17 @@ class TBankFuturesClient:
 
 class Future:
 
-    def __init__(self, ticker, basic_asset, basic_asset_type, days_till_last_trade, price):
+    def __init__(self, ticker, name, basic_asset, basic_asset_type, days_till_last_trade, price):
         self._ticker = ticker
+        self._name = name
         self._basic_asset = basic_asset
         self._basic_asset_type = basic_asset_type
         self._days_till_last_trade = days_till_last_trade
         self._price = price
+
+    @property
+    def name(self):
+        return self._name
 
     @property
     def ticker(self):

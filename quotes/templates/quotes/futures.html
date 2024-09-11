@@ -1,0 +1,25 @@
+<h1>Futures</h1>
+{% if quotes %}
+    <table>
+        <tr>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Basic asset</th>
+            <th>Basic asset type</th>
+            <th>Days till last trade</th>
+            <th>Price</th>
+        </tr>
+    {% for quote in quotes %}
+        <tr>
+            <td>{{ quote.ticker }}</td>
+            <td>{{ quote.name }}</td>
+            <td>{{ quote.basic_asset }}</td>
+            <td>{{ quote.basic_asset_type }}</td>
+            <td>{{ quote.days_till_last_trade }}</td>
+            <td>{{ quote.price }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No quotes are available.</p>
+{% endif %}
