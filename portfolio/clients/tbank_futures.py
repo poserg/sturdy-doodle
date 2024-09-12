@@ -83,4 +83,4 @@ class Future:
         return self._price
 
     def __repr__(self):
-        return f"<Future ticker:{self.ticker}, basic_asset:{self.basic_asset}, price:{self.price}>"
+        return f"<Future ticker:{self.ticker}, basic_asset:{self.basic_asset}, days_till_last_trade:{self.days_till_last_trade}, price:{self.price}>"
