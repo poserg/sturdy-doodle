@@ -37,8 +37,10 @@ class TestFutureController(unittest.TestCase):
             'NGZ4': Future('NGZ4', 'name4', 'NG', 'Commodity', 108, 3.29),
         })
 
-        self.assertEqual(result[:3], [
+        self.assertEqual(result[:5], [
             ['Asset', 'NGU4', 'NGV4', 'NGX4', 'NGZ4'],
+            ['Days', 16, 49, 77, 108],
+            ['Price', 2.167, 2.536, 3.027, 3.29],
             ['NGU4', '0.000', '-0.369', '-0.860', '-1.123'],
             ['NGV4', '0.369', '0.000', '-0.491', '-0.754'],
         ])

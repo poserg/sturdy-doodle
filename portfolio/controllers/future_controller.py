@@ -22,7 +22,11 @@ def get_futures_by_basic_asset():
 
 def calc_delta(futures):
 	items = sorted(futures.values(), key=lambda kv: kv.days_till_last_trade)
-	result = [['Asset'] + [k.ticker for k in items]]
+	result = [
+		['Asset'] + [k.ticker for k in items],
+		['Days'] + [k.days_till_last_trade for k in items],
+		['Price'] + [k.price for k in items],
+	]
 	for row in items:
 		line = [row.ticker]
 		result.append(line)
