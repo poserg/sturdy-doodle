@@ -3,7 +3,7 @@
 import unittest
 
 from portfolio.clients.tbank_futures import TBankFuturesClient, Future
-from portfolio.controllers.future_controller import get_futures_by_basic_asset, calc_delta
+from portfolio.controllers.future_controller import get_futures_by_basic_asset, calc_delta, get_quotes
 from unittest.mock import patch, MagicMock
 import logging
 
@@ -16,7 +16,7 @@ class TestFutureController(unittest.TestCase):
 
     @patch('portfolio.clients.tbank_futures.requests')
     @patch('portfolio.controllers.future_controller.client')
-    def test_get_quotes(self, mock_client, mock_requests):
+    def test_get_futures(self, mock_client, mock_requests):
         mock_response = MagicMock()
         with open('portfolio/clients/fixture_tbank_futures.json', 'r') as f:
             mock_response.text = f.read()
@@ -42,3 +42,18 @@ class TestFutureController(unittest.TestCase):
             ['NGU4', '0.000', '-0.369', '-0.860', '-1.123'],
             ['NGV4', '0.369', '0.000', '-0.491', '-0.754'],
         ])
+
+    @patch('portfolio.clients.tbank_futures.requests')
+    @patch('portfolio.controllers.future_controller.client')
+    def test_get_quotes(self, mock_client, mock_requests):
+        mock_response = MagicMock()
+        with open('portfolio/clients/fixture_tbank_futures.json', 'r') as f:
+            mock_response.text = f.read()
+        mock_requests.post.return_value = mock_response
+
+        mock_client.get_quotes.return_value = self.client.get_quotes()
+
+        result = get_quotes()
+        self.assertIn('Commodity', result)
+        self.assertIn('NG', result['Commodity'])
+        self.assertIn('NGX4', result['Commodity']['NG'][0])
