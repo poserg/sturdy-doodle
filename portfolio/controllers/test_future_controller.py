@@ -2,8 +2,8 @@
 
 import unittest
 
-from portfolio.clients.tbank_futures import TBankFuturesClient
-from portfolio.controllers.future_controller import get_futures_by_basic_asset
+from portfolio.clients.tbank_futures import TBankFuturesClient, Future
+from portfolio.controllers.future_controller import get_futures_by_basic_asset, calc_delta
 from unittest.mock import patch, MagicMock
 import logging
 
@@ -28,3 +28,17 @@ class TestFutureController(unittest.TestCase):
         self.assertIn('Commodity', result)
         self.assertIn('NG', result['Commodity'])
         self.assertIn('NGX4', result['Commodity']['NG'])
+
+    def test_calc_delta(self):
+        result = calc_delta({
+            'NGU4': Future('NGU4', 'name1', 'NG', 'Commodity', 16, 2.167),
+            'NGV4': Future('NGV4', 'name2', 'NG', 'Commodity', 49, 2.536),
+            'NGX4': Future('NGX4', 'name3', 'NG', 'Commodity', 77, 3.027),
+            'NGZ4': Future('NGZ4', 'name4', 'NG', 'Commodity', 108, 3.29),
+        })
+
+        self.assertEqual(result[:3], [
+            ['Asset', 'NGU4', 'NGV4', 'NGX4', 'NGZ4'],
+            ['NGU4', '0.000', '-0.369', '-0.860', '-1.123'],
+            ['NGV4', '0.369', '0.000', '-0.491', '-0.754'],
+        ])
