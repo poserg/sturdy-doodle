@@ -3,6 +3,19 @@ from decimal import *
 
 client = TBankFuturesClient()
 
+class ResponseItem:
+	def __init__(self, name, values):
+		self._name = name
+		self._values = values
+
+	@property
+	def name(self):
+		return self._name
+
+	@property
+	def values(self):
+		return self._values
+
 def get_futures_by_basic_asset():
 	quotes = client.get_quotes()
 	result = {}
@@ -38,10 +51,10 @@ def calc_delta(futures):
 
 def get_quotes():
 	futures = get_futures_by_basic_asset()
-	result = {}
+	result = []
 	for asset_type in futures.keys():
-		t = {}
-		result[asset_type] = t
+		t = []
 		for basic_asset in futures[asset_type].keys():
-			t[basic_asset] = calc_delta(futures[asset_type][basic_asset])
-	return result
+			t.append(ResponseItem(basic_asset, calc_delta(futures[asset_type][basic_asset])))
+		result.append(ResponseItem(asset_type, sorted(t, key=lambda kv: kv.name)))
+	return sorted(result, key=lambda kv: kv.name)

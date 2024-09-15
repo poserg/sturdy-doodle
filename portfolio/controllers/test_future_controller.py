@@ -56,6 +56,6 @@ class TestFutureController(unittest.TestCase):
         mock_client.get_quotes.return_value = self.client.get_quotes()
 
         result = get_quotes()
-        self.assertIn('Commodity', result)
-        self.assertIn('NG', result['Commodity'])
-        self.assertIn('NGX4', result['Commodity']['NG'][0])
+        self.assertEqual(result[0].name, 'Commodity')
+        self.assertEqual(result[0].values[0].name, 'Brent')
+        self.assertIn('BRV4', result[0].values[0].values[0])

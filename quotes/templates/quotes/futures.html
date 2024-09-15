@@ -1,19 +1,11 @@
 <h1>Futures</h1>
 {% if quotes %}
-    {% for asset_type, asset_type_value in quotes.items %}
-        <h2>{{ asset_type }}</h2>
-        {% for basic_asset, asset in asset_type_value.items %}
-            <h3>{{ basic_asset }}</h3>
+    {% for asset_type in quotes %}
+        <h2>{{ asset_type.name }}</h2>
+        {% for basic_asset in asset_type.values %}
+            <h3>{{ basic_asset.name }}</h3>
             <table>
-<!--                 <tr>
-                    <th>Ticker</th>
-                    <th>Name</th>
-                    <th>Basic asset</th>
-                    <th>Basic asset type</th>
-                    <th>Days till last trade</th>
-                    <th>Price</th>
-                </tr>
- -->            {% for row in asset %}
+            {% for row in basic_asset.values %}
                 <tr>
                     {% for col in row %}
                     <td>{{ col }}</td>
