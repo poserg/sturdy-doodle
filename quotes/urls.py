@@ -6,4 +6,5 @@ urlpatterns = [
     path("stocks", views.stocks, name="stocks"),
     path("bonds", views.bonds, name="bonds"),
     path("futures", views.futures, name="futures"),
+    path("funds", views.funds, name="funds"),
 ]

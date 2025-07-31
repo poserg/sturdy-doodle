@@ -134,3 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STOCK_TICKERS = config('TBANK_TICKERS').split(',')
 BOND_TICKERS = config('BONDS').split(',')
+FUND_TICKERS = config('FUNDS').split(',')
