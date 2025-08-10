@@ -7,6 +7,9 @@ from portfolio.clients.tbank import TBankClient
 from portfolio.clients.bcs import BCSClient
 from portfolio.controllers.future_controller import get_quotes
 from django.conf import settings
+import logging
+
+logger = logging.getLogger(__name__)
 
 mfd = MfdWebClient()
 tbank = TBankClient()
@@ -16,14 +19,20 @@ bcs = BCSClient()
 def stocks(request):
     quotes = []
     for i in settings.STOCK_TICKERS:
-        quotes.append(tbank.get_last_quote(i))
+        try:
+            quotes.append(tbank.get_last_quote(i))
+        except:
+            logging.exception(f"Fail to get {i}")
     context = {"quotes": quotes}
     return render(request, "quotes/stocks.html", context)
 
 def bonds(request):
     quotes = []
     for i in settings.BOND_TICKERS:
-        quotes.append(dohod_client.get_last_quote(i))
+        try:
+            quotes.append(dohod_client.get_last_quote(i))
+        except:
+            logging.exception(f"Fail to get {i}")
     context = {"quotes": quotes}
     return render(request, "quotes/bonds.html", context)
 
@@ -35,6 +44,9 @@ def futures(request):
 def funds(request):
     quotes = []
     for i in settings.FUND_TICKERS:
-        quotes.append(bcs.get_last_quote(i))
+        try:
+            quotes.append(bcs.get_last_quote(i))
+        except:
+            logging.exception(f"Fail to get {i}")
     context = {"quotes": quotes}
     return render(request, "quotes/funds.html", context)
