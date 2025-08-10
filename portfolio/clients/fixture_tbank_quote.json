@@ -1,0 +1,29 @@
+{
+   "payload":{
+      "symbol":{
+         "ticker":"SBER",
+         "brand":"Сбербанк",
+         "blackout":false,
+         "brCode":"SHS1"
+      },
+      "prices":{
+         "sell":{
+            "currency":"RUB",
+            "value":317,
+            "fromCache":false
+         },
+         "last":{
+            "currency":"RUB",
+            "value":317.97,
+            "fromCache":false
+         },
+         "close":{
+            "currency":"RUB",
+            "value":316,
+            "fromCache":false
+         }
+      }
+   },
+   "time":"2025-08-10T12:48:29.00556+03:00",
+   "status":"Ok"
+}
